@@ -1,13 +1,15 @@
 /*useEffect é uma função em javascript para disparar efeitos colaterais.. quando algo mudar ou quando algo
 acontecer ira disparar uma ação na aplicação */
 
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
+import { ChallangesContext } from '../contexts/ChallangesContext';
 
 import styles from '../styles/components/Countdown.module.css';
 
 let countDownTimeout: NodeJS.Timeout
 
 export function Countdown() {
+    const { StartNewChallange } = useContext(ChallangesContext)
 
     const [time, setTime] = useState(0.1 * 60);
     const [isActive, setIsActive] = useState(false);
@@ -29,7 +31,6 @@ export function Countdown() {
         clearTimeout(countDownTimeout);
         setIsActive(false);
         setTime(0.1 * 60)
-
     }
 
     useEffect(() => {
@@ -40,6 +41,8 @@ export function Countdown() {
         } else if (isActive && time === 0) {
             setHasFinished(true)
             setIsActive(false)
+            { StartNewChallange }
+
         }
     }, [isActive, time])
 
@@ -66,28 +69,28 @@ export function Countdown() {
                     Ciclo encerrado
                 </button>
             ) : (
-                    <>
-                        {isActive ? (
+                <>
+                    {isActive ? (
 
-                            <button
-                                type='button'
-                                className={`${styles.countdownButton} ${styles.countdownButtonActive}`}
-                                onClick={resetCountDown}
-                            >
-                                Abandonar Ciclo
-                            </button>
+                        <button
+                            type='button'
+                            className={`${styles.countdownButton} ${styles.countdownButtonActive}`}
+                            onClick={resetCountDown}
+                        >
+                            Abandonar Ciclo
+                        </button>
 
-                        ) : (
-                                <button
-                                    type='button'
-                                    className={styles.countdownButton}
-                                    onClick={StartCountDown}
-                                >
-                                    Iniciar Ciclo
-                                </button>
-                            )}
-                    </>
-                )}
+                    ) : (
+                        <button
+                            type='button'
+                            className={styles.countdownButton}
+                            onClick={StartCountDown}
+                        >
+                            Iniciar Ciclo
+                        </button>
+                    )}
+                </>
+            )}
         </div>
     );
 }
