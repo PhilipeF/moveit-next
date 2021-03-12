@@ -4,29 +4,30 @@ import styles from '../styles/components/Challangebox.module.css';
 
 export function Challangebox() {
 
-    const hasActiveChallange = true
+    const { activeChallenge, resetChallange } = useContext(ChallangesContext)
 
-    const contextData = useContext(ChallangesContext)
-    
-    console.log(contextData)    
+    //const {contextData} = useContext(ChallangesContext)
+    //console.log(contextData)
+    //const hasActiveChallenge = true;
 
     return (
-
         <div className={styles.ChallangeboxContainer}>
-            { hasActiveChallange ? (
+
+            { activeChallenge ? (
                 <div className={styles.challangeActive}>
-                    <header>Ganhe 400xp</header>
+                    <header>Ganhe {activeChallenge.amount} xp</header>
 
                     <main>
-                        <img src='icons/body.svg' />
+                        <img src={`icons/${activeChallenge.type}.svg `} />
                         <strong>Novo Desafio</strong>
-                        <p>Levante e faça uma caminhada de 3minutos.</p>
+                        <p>{activeChallenge.description}</p>
                     </main>
 
                     <footer>
                         <button
                             type='button'
                             className={styles.challangeFailedButton}
+                            onClick={resetChallange}
                         >
                             Falhei
                             </button>
@@ -39,17 +40,17 @@ export function Challangebox() {
                     </footer>
                 </div>
             ) : (
-                    <div className={styles.ChallangeNotBoxActive}>
+                <div className={styles.ChallangeNotBoxActive}>
 
-                        <strong>Finalize um ciclo para receber desafios</strong>
+                    <strong>Finalize um ciclo para receber desafios</strong>
 
-                        <p>
-                            <img src='icons/level-up.svg' alt='Level up' />
+                    <p>
+                        <img src='icons/level-up.svg' alt='Level up' />
                             Avance de Level completando desafios.
                         </p>
-                    </div>
+                </div>
 
-                )}
+            )}
 
         </div>
     )
