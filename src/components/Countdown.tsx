@@ -1,52 +1,25 @@
 /*useEffect é uma função em javascript para disparar efeitos colaterais.. quando algo mudar ou quando algo
 acontecer ira disparar uma ação na aplicação */
 
-import { useContext, useEffect, useState } from 'react';
-import { ChallangesContext } from '../contexts/ChallangesContext';
+import { useContext } from 'react';
+import { CountdownContext } from '../contexts/CoutdownContext';
 
 import styles from '../styles/components/Countdown.module.css';
 
-let countDownTimeout: NodeJS.Timeout
-
 export function Countdown() {
-    
-    const { StartNewChallange } = useContext(ChallangesContext)
 
-    const [time, setTime] = useState(0.1 * 60);
-    const [isActive, setIsActive] = useState(false);
-    const [hasFinished, setHasFinished] = useState(false);
-
-    const minutes = Math.floor(time / 60);
-    const secunds = (time % 60);
+    const {
+        minutes,    
+        secunds,
+        hasFinished,
+        isActive,
+        StartCountDown,
+        resetCountDown
+    } = useContext(CountdownContext)
 
     const [minuteLeft, minuteRight] = String(minutes).padStart(2, '0').split('');
 
     const [secundLeft, secundRight] = String(secunds).padStart(2, '0').split('');
-
-    function StartCountDown() {
-
-        setIsActive(true);
-    }
-
-    function resetCountDown() {
-        clearTimeout(countDownTimeout);
-        setIsActive(false);
-        setTime(0.1 * 60)
-    }
-
-    useEffect(() => {
-        if (isActive && time > 0) {
-            countDownTimeout = setTimeout(() => {
-                setTime(time - 1);
-            }, 1000);
-        } else if (isActive && time === 0) {
-            setHasFinished(true)
-            setIsActive(false)
-            StartNewChallange() 
-
-        }
-    }, [isActive, time])
-
 
     return (
         <div>
