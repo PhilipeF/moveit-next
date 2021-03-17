@@ -6,7 +6,7 @@ import styles from '../styles/components/Profile.module.css'
 export function Profile() {
 
     const { level } = useContext(ChallangesContext)
-     
+
     return (
         <div className={styles.profileContainer}>
             <img src="https://github.com/PhilipeF.png" alt="Philipe Ferreira" />
@@ -17,7 +17,6 @@ export function Profile() {
                 </p>
             </div>
         </div>
-
     )
 }
 
