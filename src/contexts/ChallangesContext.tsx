@@ -107,7 +107,7 @@ export function ChallangeProvaider({ children }: ChallangeProvaiderProps) {
     return (
 
         <ChallangesContext.Provider value={{
-            level: 1,
+            level,
             levelup,
             currentyExperience,
             challangeComplete,
