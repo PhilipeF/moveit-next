@@ -1,6 +1,6 @@
 import { createContext, ReactNode, useContext, useEffect, useState } from 'react';
 
-import { ChallangesContext } from '../contexts/ChallangesContext'
+import { ChallangesContext } from '../contexts/ChallangesContext';
 
 
 interface CountdownContextData {
