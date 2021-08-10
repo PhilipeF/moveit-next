@@ -64,5 +64,5 @@ O Move.it é um app que usa a técnica de Pomodoro, ao terminar os 25 minutos do
 <br>
 
 
-Projeto desenvovido junto a comunidade da [rocketseat](https://rocketseat.com.br/) no evento NLW#togther💜  
+Projeto desenvovido junto a comunidade da [rocketseat](https://rocketseat.com.br/) no evento NLW#04💜  
  
