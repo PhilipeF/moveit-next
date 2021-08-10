@@ -14,7 +14,7 @@
 <br>
 
 <h1 align="center">
-  <img alt='telaprojeto' src='/public/telaprojet.img'>
+  <img alt='telaprojeto' src='/public/telaprojet.jpg'>
 </h1>
 <br>
 
