@@ -48,7 +48,8 @@ $ npm dev
 
 ## Projeto
 
-O Move.it é um app que usa a técnica de Pomodoro, ao terminar os 25 minutos do contador são ofericidos desafios que trabalham o corpo e a visão, ideal para pessoas que passam horas sentadas em frente ao computador, conforme o usuário completa os desafios vai ganhando experiência e upando de level. 
+O Move.it é um app que usa a técnica de Pomodoro. 
+Pomodoro é um sistema de gerenciamento de tempo. É um método, que divide seu dia de trabalho em partes de 25 (vinte cinco) minutos, separadas por intervalos de 5 (cinco) minutos. Esses intervalos são chamados de pomodoros. Ao terminar os 25 minutos do contador são oferecidos desafios que trabalham o corpo e a visão, ideal para pessoas que passam horas sentadas em frente ao computador. Conforme o usuário completa os desafios vai ganhando experiência e upando de level.
 
 ## Funcionalidades
 - [x] Login através do github.
