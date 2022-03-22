@@ -59,7 +59,6 @@ Pomodoro é um sistema de gerenciamento de tempo. É um método, que divide seu 
 - [x] Manda uma notificação quando o ciclo chega ao seu fim.
 - [x] A cada ciclo libera um novo desafio.
 - [x] Usuário ganha XP a cada desafio concluído.
-- [x] Usuário pode subir de nível.
 
 ---
 <br>
