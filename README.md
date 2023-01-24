@@ -63,5 +63,3 @@ O Move.it é um app que usa a técnica de Pomodoro. É um sistema de gerenciamen
 <br>
 
 
-Projeto desenvovido junto a comunidade da [rocketseat](https://rocketseat.com.br/) no evento NLW#04💜  
- 
